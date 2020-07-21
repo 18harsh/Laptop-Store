@@ -10,8 +10,8 @@ const server = http.createServer((req, res) => {
 
     const pathName = url.parse(req.url, true).pathname;
     const id = url.parse(req.url, true).query.id;
-    console.log(pathName);
-    if (pathName === '/') {
+//     console.log(pathName);
+    if (pathName === '/Laptop-Store/') {
         res.writeHead(200, { 'Content-type': 'text/html' });
         
         fs.readFile(`${__dirname}/index.html`, 'utf-8', (err, data) => {
@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
             });
         });
     }
-    else if (pathName === '/products') {
+    else if (pathName === '/Laptop-Store/products') {
         res.writeHead(200, { 'Content-type': 'text/html' });
         
         fs.readFile(`${__dirname}/templates/template-overview.html`, 'utf-8', (err, data) => {
@@ -37,7 +37,7 @@ const server = http.createServer((req, res) => {
             });
         });
     }
-    else if (pathName === '/laptop' && id<laptopData.length) {
+    else if (pathName === '/Laptop-Store/laptop' && id<laptopData.length) {
         res.writeHead(200, { 'Content-type': 'text/html' });
         
         fs.readFile(`${__dirname}/templates/template-laptop.html`, 'utf-8', (err, data) => {
